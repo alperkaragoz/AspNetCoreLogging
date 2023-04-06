@@ -9,6 +9,11 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+// DI kullanýlamayacak durumlarda aþaðýdaki gibi logger servisine ulaþabilir ve loglama yapabiliriz.Örnek(Program)
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+logger.LogInformation("Application starting");
+
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
