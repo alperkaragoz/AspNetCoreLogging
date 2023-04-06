@@ -3,6 +3,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// .Net 7 ile Logging sýnýfýný built-in olarak çaðýrabiliyoruz.
+// ClearProviders ile bütün providerlar kalkýyor.Debug-Console-Event Source ve diðerleri kalmýþ oluyor.
+//builder.Logging.ClearProviders();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
